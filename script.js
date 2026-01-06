@@ -56,7 +56,7 @@ Respond in markdown format with clear bolded section titles. Do not use ## or ##
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer sk-bccf6a4078ca4ce3925320e3627a2a6b", // Replace with your key
+          Authorization: "Bearer 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", // Replace with your key
         },
         body: JSON.stringify({
           model: "deepseek-chat",
