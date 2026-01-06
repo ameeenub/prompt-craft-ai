@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 const promptInput = document.getElementById("promptInput");
 const platformSelect = document.getElementById("platformSelect");
 const modeSelect = document.getElementById("modeSelect");
@@ -49,15 +51,12 @@ Follow the 4-D methodology:
 Respond in markdown format with clear bolded section titles. Do not use ## or ###. Just bold titles like **Your Optimized Prompt**.
 `;
 
-  try {
-    const response = await fetch(
-      "https://api.deepseek.com/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer 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", // Replace with your key
-        },
+  import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
         body: JSON.stringify({
           model: "deepseek-chat",
           messages: [
